@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * 
- */
-module Baskin_Robbins {
-}
