@@ -1,0 +1,10 @@
+package com.lec.ex03_abc;
+
+public class C extends S{
+		public C() {
+			System.out.println("C형 객체 생성 C=3");
+			s = 3;
+		
+		}
+
+}
