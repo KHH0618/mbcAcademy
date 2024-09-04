@@ -1,0 +1,5 @@
+1. java는 OS독립적(플랫폼 독립적) 언어로 가상머신을 통해 여러 OS에서 실행가능하다
+2. 가상머신(Java Virtual Machine) : 운영체제(윈도우, 리눅스, 맥OS)의 영향을 받지 않는다.
+3. Garbage Collection : 개발자는 메모리 관리를 하지 않는다. JVM이 메모리 자동 관리
+4. Object Oriented Program(OOP) : 객체지향 언어로 개발과 유지보수를 효율적으로 진행 할 수 있다.
+5. Access Modifier(접근 제어자) : 접근에 대한 권한을 변수로 처리

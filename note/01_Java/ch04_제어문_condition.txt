@@ -1,0 +1,17 @@
+1. 조건문 (if, switch) : 조건문은 특정 조건이 true일때만 작동한다.
+2. if문 : if문은 if (조건식) { 조건식이 참일경우 실행할 함수}; 로 작동한다 ex) if (1<5) { System.out.println("1이 5보다 작습니다."); }
+3. switch 문 : switch 문은 정수 문자 문자열(Java 17이상일 경우)일 경우만 사용 가능하다.
+4.      switch(정수형 또는 문자형 변수 cf. 자바 1.7버전 이상은 문자열도 가능){
+		case 변수값1 : 위의 변수가 변수값1일 때 처리할 명령문; break;
+		case 변수값2 : 위의 변수가 변수값1일 때 처리할 명령문; break;
+		∙ ∙ ∙ ∙ ∙ ∙
+		default : 위의 변수값들이 아닐 때 처리할 명령문; break;
+	}
+처럼 사용된다. ex) 
+                     int i = 10;
+                     switch(i%2){
+		     case 0 : System.out.println("짝수입니다"); break;
+		     default :System.out.println("홀수입니다"); ;
+	             }
+
+5. break : 제어문을 빠져나오기 위해 사용한다.
