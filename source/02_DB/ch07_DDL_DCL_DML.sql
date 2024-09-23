@@ -1,0 +1,85 @@
+--[VII] DDL, DCL, DML
+-- SQL ┬ DDL(Data Definition Language) - 테이블 생성, 테이블 삭제, 테이블 구조변경, 테이블 모든 데이터 제거
+--     ├ DML(Data Manipulation Language) - SELECT, INSERT, UPDATE, DELETE
+--     └ DCL(Data Control Language) - 사용자계정 생성, 사용자에게 권한 부여, 권한박탈, 사용자계정 삭제, 트랜잭션명령어
+
+-- DDL --
+--1. 테이블 생성 (CREATE TABLE 테이블명 ...) : 테이블 구조를 정의
+DROP TABLE BOOK;
+CREATE TABLE BOOK(
+    BOOKID NUMBER(4),
+    BOOKNAME VARCHAR2(60),
+    PUBLISHER VARCHAR2(60),
+    RDATE DATE,
+    PRICE NUMBER(8,2),
+    PRIMARY KEY(BOOKID) -- 제약조건 : BOOKID필드가 주키(PRIMARY KEY : NOT NULL, UNIQUE)
+);
+
+SELECT * FROM BOOK;
+DESC BOOK;
+
+DROP TABLE BOOK;
+CREATE TABLE BOOK(
+    BOOKID NUMBER(4) PRIMARY KEY,
+    BOOKNAME VARCHAR2(60),
+    PUBLISHER VARCHAR2(60),
+    RDATE DATE,
+    PRICE NUMBER(8,2)
+);
+
+--DEPT01테이블 : DEPTNO(숫자2:PK), DNAME(문자14), LOC(문자13)
+DROP TABLE DEPT01;
+CREATE TABLE DEPT01(
+    DEPTNO NUMBER(2) PRIMARY KEY,
+    DNAME VARCHAR2(14),
+    LOC VARCHAR2(13)
+);
+
+SELECT * FROM DEPT01;
+DESC DEPT01;
+
+--EMP와 유사한 EMP01테이블 : EMPNO (숫자4-PK), ENAME (문자10), SAL (숫자7,2), DEPTNO (숫자2, DEPT01테이블과 DEPTNO 연동 : 외래키 FK)
+
+DROP TABLE EMP01;
+CREATE TABLE EMP01(
+    EMPNO NUMBER(4),
+    ENAME VARCHAR2(10),
+    SAL NUMBER(7,2),
+    DEPTNO NUMBER(2) REFERENCES DEPT01(DEPTNO),
+    PRIMARY KEY(EMPNO)
+);
+SELECT * FROM EMP01;
+INSERT INTO DEPT01 VALUES(10,'신림','TI');
+INSERT INTO EMP01 VALUES (1000,'홍', 9000, 10);
+CPMMIT;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
