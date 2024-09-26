@@ -1,0 +1,14 @@
+1. join은 select절에서 두 테이블을 연결시키는 역할을 한다
+2. Equi Join과 Non-Equi Join, Cross Join, ­	Self Join이 있다.
+	Equi Join은 두 컬럼이 일치할때 사용한다 (emp.detpno & dept.deptno)
+	Non-Equi Join은 두컬럼이 일치하지 않을때 사용한다 (emp.sal & salgrade.grade)
+	Cross join은 컬럼의 연결점없이 두 컬럼의 열의 갯수 만큼 출력한다.
+	Self Join은 한 테이블을 조인하는 역할이다.
+3. join은 from절에 두개의 테이블을 나열하여 작성한다
+	ex) SELECT ENAME, E.DEPTNO, LOC
+		FROM EMP E, DEPT D
+		WHERE E.DEPTNO = D.DEPTNO <- 두개의 테이블에 공통값을 연결한다(Equi Join)
+4. Non-Equi Join 예제
+	SELECT ENAME, SAL, GRADE
+	FROM EMP, SALGRADE
+	WHERE SAL BETWEEN LOSAL AND HISAL
