@@ -1,0 +1,4 @@
+-- DCL(계정생성, 권한부여, 권한박탈, 계정삭제)
+-- DDL (제약조건FK, 시퀀스 없음)
+-- DML (OUTER JOIN, AND &&, OR = ||, 일부단일행함수, ROWNUM이 없어 TOP-N구문이 다름)
+-- java에서 쓸 데이터 넣어보고 연습해보기alter
