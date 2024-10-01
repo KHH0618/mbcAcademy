@@ -19,10 +19,11 @@ public class Ex1_selectWhereDeptno {
 		String sql = "SELECT * FROM DEPT WHERE DEPTNO = " + deptno;
 		
 		try {
-			conn = DriverManager.getConnection(url, "dlow123", "tmvjswl");
-			stmt = conn.createStatement();
-			rs = stmt.executeQuery(sql);
-			if(rs.next()) {
+			//Class.forName(driver); 1.드라이버 로드 (jdk17에서 생략가능)
+			conn = DriverManager.getConnection(url, "dlow123", "tmvjswl"); //2.DB연결
+			stmt = conn.createStatement();//3. SQL문 전송 객체
+			rs = stmt.executeQuery(sql);//4+5. SQL전송 + 결과받기
+			if(rs.next()) { //6.원하는 로직
 					String dname = rs.getString("dname");
 					String loc = rs.getString("loc");
 					System.out.println(deptno + "번 부서정보는 다음과 같습니다");
@@ -34,7 +35,7 @@ public class Ex1_selectWhereDeptno {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		} finally {
-			try {
+			try { //7. close 연결해제
 				if(rs != null) {
 					rs.close();
 				}
