@@ -36,6 +36,7 @@ public class JavaProgram {
 					System.out.print("수학 점수 : ");
 					mat = scanner.nextInt();
 					pr.insertPerson(pname, jname, kor, eng, mat);
+					break;
 				}
 				case 2: {
 					System.out.print("직업명"+ jnames +" : ");
@@ -43,11 +44,13 @@ public class JavaProgram {
 					for (Person person : pr.getPerson(jname)) {
 						System.out.println(person);
 					}
+					break;
 				}
 				case 3: {
 					for (Person person : pr.getPerson()) {
 						System.out.println(person);
 					}
+					break;
 				}
 
 			}
