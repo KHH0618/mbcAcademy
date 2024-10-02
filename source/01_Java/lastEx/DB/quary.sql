@@ -1,0 +1,68 @@
+DROP TABLE PERSON;
+DROP TABLE JOB;
+
+CREATE TABLE JOB(
+    jNO NUMBER(2,0) PRIMARY KEY,
+    jNAME VARCHAR2(30) NOT NULL UNIQUE
+);
+
+CREATE TABLE PERSON(
+    pNO NUMBER(5) PRIMARY KEY,
+    pNAME VARCHAR2(30) NOT NULL,
+    jNO NUMBER(2,0) REFERENCES JOB(jNO),
+    KOR NUMBER(3,0) CHECK (KOR BETWEEN 0 AND 100),
+    ENG NUMBER(3,0) CHECK (ENG BETWEEN 0 AND 100),
+    MAT NUMBER(3,0) CHECK (MAT BETWEEN 0 AND 100)
+);
+
+INSERT INTO JOB
+    VALUES (10,'배우');
+
+INSERT INTO JOB
+    VALUES (20,'가수');
+
+INSERT INTO JOB
+    VALUES (30,'엠씨');
+
+DROP SEQUENCE PERSON_SEQ;
+CREATE SEQUENCE PERSON_SEQ
+    MAXVALUE 99999
+    NOCACHE
+    NOCYCLE;
+
+
+INSERT INTO PERSON
+    VALUES (TRIM(PERSON_SEQ.NEXTVAL),'정우성',10,90,80,81);
+INSERT INTO PERSON
+    VALUES (TRIM(PERSON_SEQ.NEXTVAL),'박세영',10,80,90,80);
+INSERT INTO PERSON
+    VALUES (TRIM(PERSON_SEQ.NEXTVAL),'배수지',20,20,90,90);
+
+-- 1.1을 누르면 데이터 입력
+--    이름, 직업명, 국어, 영어, 수학점수를 입력받아 
+--    데이터 베이스에 번호를 포함하여 입력한다.
+SELECT * FROM JOB WHERE jNAME = '배우';
+
+INSERT INTO PERSON(pNO,pNAME,jNO,KOR,ENG,MAT)
+    VALUES (TRIM(PERSON_SEQ.NEXTVAL),'배수지',20,20,90,90);
+
+--2. 2를 누르면 원하는 직업명을 입력 받아
+--    직업별 조회 후 총점을 추가하여 총점이 높은 순으로 이름(번호)로 출력
+SELECT ROWNUM||'등' "RANK", P.*
+    FROM (SELECT P.PNAME||'('||P.PNO||'번'||')' "PNAME",J.JNAME "JNAME",P.KOR,P.ENG,P.MAT,P.KOR+P.ENG+P.MAT "TOTAL" 
+            FROM PERSON P ,JOB J
+            WHERE P.JNO = J.JNO
+                AND JNAME = '배우'
+            ORDER BY TOTAL DESC ) P;
+
+--3. 3을 누르면  
+--     데이터베이스에 입력된 사람 전체를 조회 후 총점을 추가하여
+--     총점이 높은 순으로 출력한다
+SELECT ROWNUM||'등' "RANK", P.*
+    FROM (SELECT P.PNAME||'('||P.PNO||')' "PNAME",J.JNAME "JNAME",P.KOR,P.ENG,P.MAT,P.KOR+P.ENG+P.MAT "TOTAL" 
+            FROM PERSON P ,JOB J
+            WHERE P.JNO = J.JNO
+            ORDER BY TOTAL DESC ) P;
+commit;
+
+SELECT * FROM PERSON;
