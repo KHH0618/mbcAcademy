@@ -1,0 +1,25 @@
+﻿
+    
+    header{
+        text-align:center
+    }
+div {
+    margin: 0px auto;
+    width: 500px;
+}
+    b.essential{
+        color:red;
+    }
+div.but {
+    padding:10px;
+    display: flex;
+    justify-content: center;
+}
+div.but input{
+    margin:5px;
+}
+footer{
+    text-align:center;
+    color:#CCCCCC;
+    font-size:10px;
+}

@@ -4,9 +4,25 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <script>
+    function chk() {
+        if (!frm.pw.value) {
+            alert('비밀번호를 입력하세요');
+            frm.pw.focus();
+            return false;
+        } else if (frm.pw.value != frm.pwChk.value) {
+            alert('비밀번호를 확인하세요');
+            frm.pw.value = '';
+            frm.pwChk.value = '';
+            frm.pw.focus();
+            return false;
+        }
+        return true
+    }
+    </script>
 </head>
 <body>
-    <form action="" method="get">
+    <form action="" method="get" onsubmit="chk">
         <table>
             <tr>
                 <td>
