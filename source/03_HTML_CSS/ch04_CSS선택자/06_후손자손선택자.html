@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #wrap{
+            width:600px;
+            margin:0px auto;
+            border: 1px solid #cccccc;
+        }
+        #wrap > #header{ /* #wrap 바로 밑의 #header : 자손선택자*/
+            overflow:hidden;
+        }
+        #wrap .logo{ /* #wrap 밑의 .logo 후손선택자 */
+            float:left;
+            margin:10px 30px 10px 100px;
+        }
+        #wrap .title{
+            float:left;
+            margin:17px 100px 10px 30px;
+        }
+        div p{ /*후손 선택자*/
+            font-size:24px;
+        }
+        div > p {/*자손선택자*/
+            color:red;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="logo">
+                <h1>LOGO</h1>
+            </div>
+            <div class="title">
+                <h2>OO 주식회사</h2>
+            </div>
+        </div> <!-- header -->
+        <div id="content">
+            <p>
+                헌법재판소 재판관은 정당에 가입하거나 정치에 관여할 수 없다. 국정의 중요한 사항에 관한 대통령의 자문에 응하기 위하여 국가원로로 구성되는 
+                국가원로자문회의를 둘 수 있다.
+            </p>
+            <ul>
+                <li>
+                    <p>
+                        국가는 법률이 정하는 바에 의하여 재외국민을 보호할 의무를 진다. 국가안전보장회의는 대통령이 주재한다. 
+                        대법원은 법률에 저촉되지 아니하는 범위안에서 소송에 관한 절차, 법원의 내부규율과 사무처리에 관한 규칙을 제정할 수 있다.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        원장은 국회의 동의를 얻어 대통령이 임명하고, 그 임기는 4년으로 하며, 1차에 한하여 중임할 수 있다. 
+                        헌법재판소는 법률에 저촉되지 아니하는 범위안에서 심판에 관한 절차, 내부규율과 사무처리에 관한 규칙을 제정할 수 있다.
+                    </p>
+                </li>
+            </ul>
+        </div><!-- section -->
+        <div id="footer">
+            <p>서울시 땡떙구 아무동</p>
+        </div>
+    </div>
+</body>
+</html>

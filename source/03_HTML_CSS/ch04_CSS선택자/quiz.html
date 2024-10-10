@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        body{
+            overflow:hidden;
+        }
+        #format{
+            width:1000px;
+            height:600px;
+            margin:0 auto;
+        }
+        .left {
+            width: 150px;
+            border: 1px solid gray;
+            background-color:lightgray;
+        }
+        .right {
+            width: 150px;
+            border: 1px solid gray;
+            background-color: lightgray;
+        }
+        .center {
+            width: 693px;
+            border: 1px solid gray;
+            text-align: center;
+            background-color: lightgray;
+        }
+        #header {
+            height: 150px;
+            overflow: hidden;
+        }
+        #header>.left{
+            float:left;
+            height:149px;
+            border-radius:20px 0 20px 0;
+        }
+        #header>.center{
+            float:left;
+            height:149px;
+            border-radius:0 0 20px 20px;
+        }
+        #header>.right{
+            float:left;
+            height:149px;
+            border-radius: 0 20px 0 20px;
+        }
+        #content {
+            height: 300px;
+            overflow: hidden;
+        }
+        #content>.left{
+            float:left;
+            height:299px;
+            border-radius:0 20px 20px 0;
+        }
+        #content>.center{
+            float:left;
+            height:299px;
+            border-radius:20px;
+        }
+        #content>.right{
+            float:left;
+            height:299px;
+            border-radius: 20px 0 0 20px;
+        }
+        #footer {
+            height: 150px;
+            overflow: hidden;
+        }
+        #footer > .left {
+            float: left;
+            height: 148px;
+            border-radius: 0 20px 0 20px;
+        }
+        #footer>.center{
+            float:left;
+            height:148px;
+            border-radius:20px 20px 0 0;
+        }
+        #footer>.right{
+            float:left;
+            height:148px;
+            border-radius: 20px 0 20px 0;
+        }
+        #content>.center ul{
+            overflow:hidden;
+        }
+        #content > .center ul li {
+            list-style:none;
+            width:33%;
+            float:left;
+        }
+        #content > .center ul li a{
+            text-decoration:none;
+            font-weight:bold;
+            font-size:1.5em;
+            color:black;
+        }
+        #content > .center h2{
+            padding:60px 0 20px 0;
+        }
+        #content > .center p{
+            padding:60px 0 0 0;
+            font-size:0.7em;
+        }
+        #content > .right ol{
+            padding-left:40px;
+            padding-block-start:20px;
+            font-size:0.9em;
+        }
+        #content > .right ol li a{
+            text-decoration:none;
+            color:black;
+        }
+        #content > .right ol li:nth-child(9) ~ li, #content > .right ol li:nth-child(9) ~ li a{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="format">
+        <div id="header">
+            <div class="left">
+
+            </div>
+            <div class="center">
+
+            </div>
+            <div class="right">
+
+            </div>
+        </div>
+        <div id="content">
+            <div class="left">
+
+            </div>
+            <div class="center">
+                <ul>
+                    <li><a href="#1">menu1</a></li>
+                    <li><a href="#2">menu2</a></li>
+                    <li><a href="#3">menu3</a></li>
+                </ul>
+                <h2>AI 개발자 양성과정</h2>
+                <p>
+                    국무총리·국무위원 또는 정부위원은 국회나 그 위원회에 출석하여 국정처리상황을 보고하거나 의견을 진술하고 질문에 응답할 수 있다.
+                    사면·감형 및 복권에 관한 사항은 법률로 정한다.
+                </p>
+            </div>
+            <div class="right">
+                <ol style="1">
+                    <li><a href="quiz/02_태그선택자.html">태그</a></li>
+                    <li><a href="quiz/03_전체선택자.html">전체(*)</a></li>
+                    <li><a href="quiz/04_id와class,혼합선택자.html">id, class</a></li>
+                    <li><a href="quiz/05_속성선택자1.html">속성</a></li>
+                    <li><a href="quiz/06_후손자손선택자.html">후손, 자손(>)</a></li>
+                    <li><a href="quiz/07_동위선택자.html">동위</a></li>
+                    <li><a href="quiz/08_반응선택자1.html">반응</a></li>
+                    <li><a href="quiz/09_상태선택자.html">상태</a></li>
+                    <li><a href="quiz/10_구조선택자(세로메뉴).html">구조</a></li>
+                    <li><a href="quiz/1_글자태그.html">문자</a></li>
+                    <li><a href="quiz/1_글자태그.html">링크</a></li>
+                    <li><a href="quiz/6퀴즈.html">부정</a></li>
+                </ol>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="left">
+
+            </div>
+            <div class="center">
+
+            </div>
+            <div class="right">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
