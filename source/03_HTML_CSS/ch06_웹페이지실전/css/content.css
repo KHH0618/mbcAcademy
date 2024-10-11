@@ -1,0 +1,50 @@
+﻿/*content.css*/
+#content{
+    width:1000px;
+    margin:0 auto;
+}
+
+#content .section1{
+    overflow:hidden;
+    height:400px;
+    margin-bottom:5px;
+}
+#content .section1 > div{
+    border:1px solid gray;
+    box-sizing:border-box;
+    float:left;
+    height:400px;
+    line-height:400px;
+    text-align:center;
+}
+#content .section1 .slide_banner{
+    width:70%;
+}
+#content .section1 .side_banner{
+    width:30%;
+}
+
+#content .section2{
+    width:1000px;
+    margin:0 auto;
+}
+#content .section2 .hit_product, #content .section2 .md_product{
+    border:1px solid gray;
+    height:400px;
+    width:100%;
+    margin-bottom:10px;
+}
+#content .section2 .hit_product > ul, #content .section2 .md_product > ul{
+    overflow:hidden;
+    padding:0 4px;
+}
+#content .section2 .hit_product > ul > li, #content .section2 .md_product > ul > li {
+    float:left;
+    width:240px;
+    height:400px;
+    margin:0 4px;
+    line-height:400px;
+    text-align:center;
+    border:1px solid gray;
+    box-sizing:border-box;
+}
