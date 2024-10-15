@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        var cnt = 0; //횟수
+        var startTime = new Date().getTime();//현재 시점의 밀리세컨
+        while(startTime + 1000 >= new Date().getTime()){
+            cnt++
+        }
+        // document.write(cnt);
+        var cntstr = String(cnt);
+        var temp = cntstr.length % 3;
+        for(var idx = 0; idx < cntstr.length; idx++){
+            if(temp==0){
+                if(idx != 0){
+                    document.write(',');
+                }
+                temp = 3;
+            }
+            document.write(cntstr[idx]);
+            temp --;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
