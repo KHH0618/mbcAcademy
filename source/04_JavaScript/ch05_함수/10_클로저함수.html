@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        //클로저함수 : retrun된 함수
+        function test(name){
+            var msg = 'Hello, ' + name + ' Have a goodday!'
+            return () => alert(msg);
+        }
+        test('test')();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
