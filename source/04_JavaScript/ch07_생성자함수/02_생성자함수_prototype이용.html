@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script src="../ch06_객체/04_repaceAll.js"></script>
+    <script>
+        function Student(name, kor, mat, eng, sci){
+            this.name = name;
+            this.kor = kor;
+            this.mat = mat;
+            this.eng = eng;
+            this.sci = sci;
+        }//생성자함수(Student)
+
+        //Student공통영역 (prototype)에 getSum, getAvg, to String
+        Student.prototype.getSum = function(){
+                return this.kor + this.eng + this.mat + this.sci;
+            };
+        Student.prototype.getAvg = function(){
+                return this.getSum()/4;
+            };
+        Student.prototype.toString = function(){
+                let output = '';
+                for(let key in this){
+                    if(key != 'getSum' && key != 'getAvg' && key != 'toString'){
+                        output += this[key] + ' ';
+                    }else if (key == 'getSum'){
+                        output += key.substring(3) + ' : ' + this[key]()+' '
+                    }else if(key == 'getAvg'){
+                        output += key.substring(3) + ' : ' + this[key]() + '<br/>'
+                    }//if
+                }//for
+                return output;
+            };//toString
+        
+        var students = [];
+        students.push(new Student('홍길동', 80, 70, 50,88));
+        students.push(new Student('김길동', 80, 70, 50, 89));
+        students.push(new Student('김홍동', 100, 70, 50, 54));
+        var output = '이름\t총점\t평균<br/>';
+        for (var i in students) {
+            output += students[i].toString();
+        }
+        alert(repaceAll(output,'<br/>','\n'));
+        document.write(output);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
