@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <!--    2. 간략문법 ┬ \d : 숫자와 매치, [0-9]와 동일
+                        ├ \D : 숫자가 아닌 것
+                        ├ \w : 영문자나 숫자, [0-9a-zA-Z]
+                        ├ \W : 영문자나 숫자가 아닌 문자
+                        ├ . : \n 제외한 문자
+                        ├ \. : (.)
+                        ├ {2,} : 2번 이상 반복
+                        ├ {2,4} : 2 ~ 4회 반복
+                        ├ + : 1회 이상 반복
+                        ├ * : 0회 이상 반복
+                        ├ ? : 0번이나 1회
+                        └ | : 또는
+    [(]?\d{2,3}[)]?\d{3,4}-\d{4}|(\d{2,3}[\-)\.]?)(\d{3,4}[\-)\.]?){2} : 전화번호정규표현식
+    [a-zA-Z0-9]+@[a-zA-Z0-9]+(\.[a-zA-Z0-9]+){1,2} : 이메일정규표현식
+    (\d{2}(0[1-9]|1[0-2])(([0-2]\d)|(3[0-1]))-?[1-4]\d{6}) : 주민등록번호 정규표현식 -->
+    <script>
+        var str = 'abcd@ef가';
+        // 패턴
+        var patternNum = /[0-9]/; //숫자패턴
+        var patternEng = /[a-zA-Z]/; //알파벳문자패턴
+        var patternKor = /[가-힣ㄱ-ㅎㅏ-ㅣ]/; //한글문자패턴
+        var patternSpc = /[~`!@#$%^&*()_\-+=\|\\\[\]{}'";;?\/<>,\.]/; //특수문자패턴
+        // 정규표현식패턴.test(str) : str에 패턴이 포함되어 있는지 (true/false)
+        document.write('str에 숫자 포함 : ' + patternNum.test(str) + '<br/>');
+        document.write('str에 알파벳문자 포함 : ' + patternEng.test(str) + '<br/>');
+        document.write('str에 한글문자 포함 : ' + patternKor.test(str) + '<br/>');
+        document.write('str에 특수문자 포함 : ' + patternSpc.test(str) + '<br/>');
+
+        // str.match(정규표현패턴) : str이 정규표현식패턴과 맞는지 (정규표현식과 맞는text/ null)
+        var patternMail = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+(\.[a-z0-9]+){1,2}$/;
+        var email1 = 'hong@hong.com'
+        var email2 = 'hong@hong.co.kr'
+        var email3 = 'hong@hong.co@kr'
+        document.write('email1 : ' + email1.match(patternMail) + '<br/>');
+        document.write('email2 : ' + email2.match(patternMail) + '<br/>');
+        document.write('email3 : ' + email3.match(patternMail) + '<br/>');
+        if(email1.match(patternMail)){
+            document.write('email1은 메일형식입니다<br/>')
+        }else{
+            document.write('email1은 메일형식아닙니다<br/>')
+        }
+        if(email2.match(patternMail)){
+            document.write('email2은 메일형식입니다<br/>')
+        }else{
+            document.write('email2은 메일형식아닙니다<br/>')
+        }
+        if(email3.match(patternMail)){
+            document.write('email3은 메일형식입니다<br/>')
+        }else{
+            document.write('email3은 메일형식아닙니다<br/>')
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
