@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        let arr = ['가', '라', '나', '라', '다', '라', '마', '라'];
+        let copyArr = arr.slice(0, arr.length);
+        //splice(idx, cnt) : 배열에 idx번째부터 cnt개 재거(배열이 수정)
+        //splice(idx, cnt, 대체값) : 배열에 idx번째부터 cnt개 재거하고 그 부분에 대체값을 추가
+        for(let idx = 0; idx<copyArr.length; idx++){
+            if(copyArr[idx] == '라'){
+                copyArr.splice(idx, 1);
+                idx--;
+                console.log(idx);
+            }
+        }
+        document.write('원본 : ' + arr + '<br/>');
+        document.write('복사본 : ' + copyArr + '<br/>');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        var arr1 = new Array('big', 'zaa', 'abz', 'abc');
+        var arr2 = [52, 100, 12, 94, 32];
+        let arr1Copy = arr1.slice();
+        let arr2Copy = [...arr2];
+        arr2Copy = Array.from(arr2);
+        arr1Copy.sort();// 문자는 아스키코드 순으로 정렬
+        document.write('arr1 : ' + arr1 + '<br/>');
+        document.write('arr1copy : ' + arr1Copy + '<br/>');
+        arr2Copy.sort(); //숫자도 아스키코드 순으로 정렬
+        document.write('arr2 : ' + arr2 + '<br/>');
+        document.write('arr2copy : ' + arr2Copy + '<br/>');
+        arr2Copy.sort((left, right)=>{ //오름차순정렬 콜백함수 이용
+            return left - right;
+        }); 
+        document.write('arr2 : ' + arr2 + '<br/>');
+        document.write('arr2copy : ' + arr2Copy + '<br/>');
+        arr2Copy.reverse(); //내림차순정렬
+        document.write('arr2 : ' + arr2 + '<br/>');
+        document.write('arr2copy : ' + arr2Copy + '<br/>');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

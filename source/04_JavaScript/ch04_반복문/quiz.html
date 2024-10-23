@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        var cnt = 0;
+        var sum = 0;
+        var right = 0;
+        var worng = 0;
+        do{
+            var yor = confirm('누적할래?');
+            if(!yor){
+                break;
+            }
+            var score = parseInt(prompt('누적할 점수?(0~100)'));
+            cnt++;
+            if(score>=0 && score <= 100){
+                sum += score;
+                right++;
+                console.log(1);
+            }
+            if(score<0 || score > 100 || isNaN(score)){
+                worng++;
+                console.log(2);
+            }
+        }while(true);
+        document.write(cnt + '번입력 <br/>');
+        document.write('누적점수 : ' + sum + ' <br/>');
+        document.write('점수를제대로입력한 횟수 : ' + right + '<br/>');
+        document.write('점수를잘못입력한 횟수 : ' + worng + '<br/>');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <style>
+        body{
+            background-size: 100%;
+            color: aqua;
+        }
+    </style>    
+    <script>
+        document.write('<h1>TEST</h1>');
+        var sec = 0;
+        var col = ['#FFFF00','#000000','#FFFFFF'];
+        var img = ['url(ch05_img/img01.png)','url(ch05_img/img02.png)','url(ch05_img/img03.png)'];
+        var ix = setInterval(()=>{
+            sec ++;
+            document.body.style.backgroundImage = img[sec%img.length];
+            document.body.style.color = col[sec%col.length];
+            document.body.innerHTML = new Date();
+        },1000);
+        
+        setTimeout(()=>clearInterval(ix),10000);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

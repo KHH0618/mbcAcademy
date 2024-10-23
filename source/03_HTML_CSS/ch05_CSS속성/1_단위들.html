@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #wrap{
+            width:600px;
+            margin:0 auto;
+            border: 1px solid gray;
+            text-align:justify;
+            padding:10px;
+        }
+        #wrap p:nth-child(2n){
+            background-color:lightpink;
+        }
+        #wrap p:nth-child(1){
+            font-size:100%;/* 문자의 경우 원래사이즈의 몇%
+            width,height,padding,margin... 등의 경우 : 부모 태그의 몇%
+            */
+        }
+        #wrap p:nth-child(2){
+            font-size:24px; /*문자, width, margin, padding...등*/
+        }
+        #wrap p:nth-child(3){
+            font-size:24pt;
+        }
+        #wrap p:nth-child(4){
+            font-size:2.5em; /*원래 사이즈의 2.5배(40px) (기본사이즈에서 환산 : pxtoem.com.au)*/
+        }
+        #wrap > p > span{
+            display:block; /*span 태그의 display속성인 inline을 block으로 전환*/
+            color:gray;
+            font-size:.5em; /*원래 사이즈의 0.5배*/
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <p>
+            대법원장과 대법관이 아닌 법관의 임기는 10년으로 하며, 법률이 정하는 바에 의하여 연임할 수 있다.
+            국회나 그 위원회의 요구가 있을 때에는 국무총리·국무위원 또는 정부위원은 출석·답변하여야 하며,
+            국무총리 또는 국무위원이 출석요구를 받은 때에는 국무위원 또는 정부위원으로 하여금 출석·답변하게 할 수 있다.
+            <span>2024년 10월 10일</span>
+        </p>
+        <p>
+            모든 국민은 근로의 권리를 가진다. 국가는 사회적·경제적 방법으로 근로자의 고용의 증진과 적정임금의 보장에 노력하여야 하며,
+            법률이 정하는 바에 의하여 최저임금제를 시행하여야 한다.
+            <span>2024년 10월 10일</span>
+        </p>
+        <p>
+            모든 국민은 근로의 권리를 가진다. 국가는 사회적·경제적 방법으로 근로자의 고용의 증진과 적정임금의 보장에 노력하여야 하며,
+            법률이 정하는 바에 의하여 최저임금제를 시행하여야 한다.
+            <span>2024년 10월 10일</span>
+        </p>
+        <p>
+            모든 국민은 근로의 권리를 가진다. 국가는 사회적·경제적 방법으로 근로자의 고용의 증진과 적정임금의 보장에 노력하여야 하며,
+            법률이 정하는 바에 의하여 최저임금제를 시행하여야 한다.
+            <span>2024년 10월 10일</span>
+        </p>
+    </div>
+</body>
+</html>

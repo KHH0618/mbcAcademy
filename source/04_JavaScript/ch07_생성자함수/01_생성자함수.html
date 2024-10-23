@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        function Student(name, kor, mat, eng, sci){
+            this.name = name;
+            this.kor = kor;
+            this.mat = mat;
+            this.eng = eng;
+            this.sci = sci;
+
+            this.getSum = function(){
+                return this.kor + this.eng + this.mat + this.sci;
+            };
+            this.getAvg = function(){
+                return this.getSum()/4;
+            };
+            this.toString = function(){
+                let output = '';
+                for(let key in this){
+                    if(key != 'getSum' && key != 'getAvg' && key != 'toString'){
+                        output += this[key] + ' ';
+                    }else if (key == 'getSum'){
+                        output += key.substring(3) + ' : ' + this[key]()+' '
+                    }else if(key == 'getAvg'){
+                        output += key.substring(3) + ' : ' + this[key]() + '<br/>'
+                    }//if
+                }//for
+                return output;
+            };//toString
+        }//생성자함수(Student)
+        Student.prototype.getSum = function(){
+                return this.kor + this.eng + this.mat + this.sci;
+            };
+
+        let students = [
+            new Student('함길동', 90, 60, 87, 54),
+            new Student('장길동', 50, 60, 71, 79),
+            new Student('문길동', 26, 76, 70, 59),
+            new Student('고길동', 62, 74, 46, 56),
+            new Student('윤길동', 95, 75, 45, 43),
+        ];
+        students.push(new Student('성춘향',56, 28, 98, 45));
+        students.forEach((item, i) => {
+            document.write(i + '번째 : ' + item);
+        });
+        students.pop();
+        students.pop();
+        students.pop();
+        document.write('<hr>pop후<br/>');
+        students.forEach((item, i) => {
+            document.write(i + '번째 : ' + item + '<br/>');
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

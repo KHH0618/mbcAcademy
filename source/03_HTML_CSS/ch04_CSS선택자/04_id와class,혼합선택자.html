@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        div{
+            border : 1px solid #cccccc;
+            text-align : center;
+        }
+        div#header {
+            width : 600px;
+            margin : 0 auto;
+            background-color : lightyellow;
+        }
+        div#wrap {
+            overflow: hidden; /*부모단에 overflow:hidden*/
+            width: 600px;
+            margin: 0 auto;
+        }
+        #wrap #content {
+            width:348px; /* #content = width(350px) + border(1+1+=2))*/
+            height : 300px;
+            float: left;
+        }
+        #wrap #side_banner {
+            width: 248px;
+            height: 300px;
+            float: left;
+        }
+        #wrap #content .menu1 {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        #wrap #content .menu2, #wrap #content .menu4{
+            font-size:1.2em;
+            font-weight : bold;
+        }
+        #wrap #side_banner img{
+            width:150px;
+        }
+
+        #footer{
+            clear : both;
+            width : 600px;
+            margin : 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>HEADER</h1>
+    </div>
+    <div id="wrap">
+        <div id="content">
+            <h3>CONTENT</h3>
+            <ul>
+                <li class="menu1">menu1</li>
+                <li class="menu2">menu2</li>
+                <li class="menu1">menu3</li>
+                <li class="menu4">menu4</li>
+                <li class="menu1">menu5</li>
+            </ul>
+        </div>
+        <div id="side_banner">
+            <h3>BANNER</h3>
+            <a href="http://www.daum.net" target="_blank">
+                <img src="https://t1.daumcdn.net/daumtop_chanel/op/20170315064553027.png"
+                     alt="다음로고" />
+            </a>
+        </div>
+    </div>
+    <div id="footer">
+        <h1>FOOTER</h1>
+    </div>
+
+</body>
+</html>

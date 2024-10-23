@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <style>
+        p{
+            text-align: center;
+        }
+    </style>
+    <script>
+        var openerId;
+        window.onload = function(){
+            openerId = opener.document.getElementById('identity').value.trim();
+            var modifyId = document.querySelector('input[type="text"]'); 
+            modifyId.value = openerId;
+        }
+        function sendData(){
+            opener.document.getElementById('identity').value = document.querySelector('input[type="text"]').value;
+            opener.document.getElementById('confirmed').value = 1;
+            close();
+        }
+    </script>
+</head>
+<body>
+    <p>id <input type="text" class="modify"><button >체크</button></p>
+    <p><button onclick="sendData()">아이디로 사용</button></p>
+</body>
+</html>

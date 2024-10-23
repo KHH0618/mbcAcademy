@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <style>
+        
+    </style>
+    <script>
+        //var child = open('/06_child(center).html','', 'width='+childWidth+',height='+childHeight+',left='+childLeft+',top='+childTop);
+        var child = open('06_child(center).html','','');
+        var childWidth = screen.width/2;
+        var childHeight = screen.height/2;
+        var childLeft = screen.width/4;
+        var childTop = screen.height/4;
+        child.resizeTo(childWidth,childHeight);
+        child.moveTo(childLeft,childTop);
+    </script>
+</head>
+<body>
+</body>
+</html>

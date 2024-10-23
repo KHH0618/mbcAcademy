@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        //javascript에서의 배열
+        var a = 10;
+        var arr = [1,2,'홍길동',true,function(){alert(1);},[1,2]];
+        document.write('arr의 타입 : ' + typeof(arr)+ ', 값은 : ' + arr + '<br/>');
+        document.write('arr의 크기 : ' + arr.length + '<br/>');
+        arr.push(66); //arr 제일 끝 인덱스 뒤에 추가
+        document.write('arr의 크기 : ' + arr.length + '<br/>');
+        arr.unshift(0); //arr 배열 0방에 추가, 기존의 방들은 shift
+        document.write('<hr>');
+        document.write('추가된 arr의 타입 : ' + typeof(arr) + ', 값 : ' + arr + '<br/>')
+        document.write('추가된 arr의 크기: ' + arr.length + '<br/>');
+        var value = arr.pop(); // 마지막 index의 값을 return하고 삭제
+        document.write('<hr>');
+        document.write('pop한 값 : ' + value + '<br/>')
+        document.write('삭제pop 된 arr의 타입 : ' + typeof(arr) + ', 값 : ' + arr + '<br/>')
+        document.write('삭제pop 된 arr의 크기: ' + arr.length + '<br/>');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

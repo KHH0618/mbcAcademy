@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        fieldset{
+            width: 500px;
+            margin: 0 auto;
+            border: 1px solid gray;
+        }
+        p{
+            text-align: center;
+        }
+
+    </style>
+    <script>
+        function chk(){
+            var nu1 = frm.nu1.value;
+            var nu2 = frm.nu2.value;
+            var su1 = parseInt(nu1);
+            var su2 = parseInt(nu2);
+            if(!isNaN(su1)&&!isNaN(su2)&& (su1<su2 || su1 == su2)){
+                let resulot = su2 - su1;
+                if(resulot === 0){
+                    let msg = "<h3>두수가 같습니다</h3>"
+                    document.body.innerHTML += msg;
+                    msg1 = msg.substring(4, msg.indexOf('</h3>'));
+                    alert(msg1);
+                }else{
+                    let msg = "<h3>두번째 수가 "+resulot+" 만큼 큽니다</h3>"
+                    document.body.innerHTML += msg;
+                    msg1 = msg.substring(4);
+                    msg1 = msg1.substring(0, msg1.indexOf('</h3>'));
+                    alert(msg1);
+                }
+            }else if(su1>su2){
+                alert('두번째수가 더 큰 수여야 합니다');
+                frm.nu2.focus();
+                return false;
+            }else if(isNaN(su1) || isNaN(su2)){
+                alert('숫자를 입력해야 합니다')
+                return false;
+                if(isNaN(su1)){
+                    frm.nu1.focus();
+                    return false;
+                }else if(isNaN(su2)){
+                    frm.nu2.focus();
+                    return false;
+                }
+            }
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <form name="frm" method="get" onsubmit="return chk()">
+            <p>
+                <label for="nu1">첫번째수</label>
+                <input type="number" name="nu1" id="nu1">
+            </p>
+            <p>
+                <label for="nu2">두번째수</label>
+                <input type="number" name="nu2" id="nu2">
+            </p>
+            <p>
+                <input type="submit" value="결과">
+            </p>
+        </form>
+    </fieldset>
+</body>
+</html>

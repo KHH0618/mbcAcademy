@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title></title>
+    <style>
+        table {width:280px; height: 100px; margin: 10px auto;} 
+        h3{text-align:center;}
+    </style>    
+    <script>
+        var bacol = ['red', 'orange', 'yellow', 'green', 'blue','midnightblue', 'lightpink'];
+        var td;
+        window.onload = () => {
+            td = document.querySelectorAll('body table tr td');
+            for(var idx = 0; idx < td.length; idx ++){
+                td[idx].style.backgroundColor = bacol[idx];
+            }
+        }
+        function colorCheng (idx){
+            document.body.style.backgroundColor = bacol[idx];
+            var h1 = document.querySelectorAll('h1');
+            if(h1.length>0){
+                document.body.removeChild(h1[0]);
+            }
+        }
+        function bodybackout () {
+            document.body.style.backgroundColor = 'white';
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td onmouseover="colorCheng(0)" onmouseout="bodybackout()"></td>
+            <td onmouseover="colorCheng(1)" onmouseout="bodybackout()"></td>
+            <td onmouseover="colorCheng(2)" onmouseout="bodybackout()"></td>
+            <td onmouseover="colorCheng(3)" onmouseout="bodybackout()"></td>
+            <td onmouseover="colorCheng(4)" onmouseout="bodybackout()"></td>
+            <td onmouseover="colorCheng(5)" onmouseout="bodybackout()"></td>
+            <td onmouseover="colorCheng(6)" onmouseout="bodybackout()"></td>
+        </tr>
+    </table>
+</body>
+</html>

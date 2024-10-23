@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=2.0, minimum-scale=0.7" />
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        li{
+            list-style:none;
+        }
+        a{
+            text-decoration:none;
+            display:block;
+        }
+        header{
+            background-color:#ea8f00;
+            height:100px;
+        }
+        header #logo_wrap{
+            height:50px;
+            line-height:50px;
+            text-align:center;
+            position:relative; /*자식태그가 부모태그 안에 두기 위한 용도*/
+        }
+        header #logo_wrap a {
+            color:white;
+            font-weight:bold;
+            font-size:1.5em;
+        }
+        header #logo_wrap .menu{
+            position:absolute;
+            top:0;
+            left:10px;
+        }        
+        header #logo_wrap .myinfo{
+            position:absolute;
+            top:0;
+            right:10px;
+        }
+        header #search input[type='submit']{
+            background:url('ch07/search.png') no-repeat;
+            width:50px;
+            height:50px;
+            border:0;
+            outline:0;
+            position:absolute;
+            right:0;
+        }
+        header #search input[type='text']{
+            height:50px;
+            width:100%;
+            border:3px solid #ea8f00;
+            box-sizing:border-box;
+            outline:3px solid #ea8f00;
+            padding:10px 60px 10px 10px;
+        }
+        #lnb ul{
+            overflow:hidden;
+            margin:7px 0;
+        }
+        #lnb ul li{
+            float:left;
+            width:16.66%;
+            text-align:center;
+            border-right:1px solid #ea8f00;
+            box-sizing:border-box;
+            height:30px;
+            line-height:30px;
+        }
+        #lnb ul li:last-child{
+            border:0;
+        }
+        #lnb ul li a{
+            color:blue;
+            font-weight:bold;
+        }
+        section #section1 .row1,
+        section #section1 .row2,
+        section #section1 .row3{
+            overflow:hidden;
+        }
+
+        section #section1 .row1 > div,
+        section #section1 .row2 > div,
+        section #section1 .row3 > div{
+            float:left;
+            width:50%;
+            height:120px;
+        }
+        section #section1 img{
+            width:100%;
+            height:120px;
+        }
+        section #section2 {
+            margin:7px 2px;
+        }
+        section #section2 ul li:last-child{
+            border-bottom:1px solid #cccccc;
+        }
+        section #section2 ul li {
+            display: block;
+            border : 1px solid #cccccc;
+            border-bottom:0;
+            padding:7px;
+        }
+        section #section2 ul li a{
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+        }
+        section #section3 ul li {
+            border : 1px solid gray;
+            box-sizing:border-box;
+            margin:7px;
+            padding:7px;
+            position:relative;
+            height:120px;
+        }
+        section #section3 ul li p.img{
+            position:absolute;
+            left:10px;
+            top:10px;
+        } 
+        section #section3 ul li p.txt{
+            padding-left:120px;
+        }
+        section #section3 ul li p.txt span:first-child{
+            display:block;
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            font-weight:bold;
+            font-size:1.2em;
+            color:darkblue;
+        }
+        footer{
+            background-color:#ea8f00;
+            text-align:center;
+        }
+        footer p:last-child{
+            padding : 0 0 10px 0;
+            font-size:0.8em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo_wrap">
+            <img class="menu" src="ch07/menu.png" alt="메뉴아이콘" />
+            <a class="logo" href="ex.html">mobile logo</a>
+            <img class="myinfo" src="ch07/myinfo.png" alt="내정보아이콘" />
+        </div>
+        <div id="search">
+            <form action="#">
+                <input type="text" name="query_word" />
+                <input type="submit" value=""/>
+            </form>
+        </div>
+    </header>
+    <div id="lnb">
+        <ul>
+            <li><a href="#">lnb1</a></li>
+            <li><a href="#">lnb2</a></li>
+            <li><a href="#">lnb3</a></li>
+            <li><a href="#">lnb4</a></li>
+            <li><a href="#">lnb5</a></li>
+            <li><a href="#">lnb6</a></li>
+        </ul>
+    </div>
+    <section>
+        <div id="section1">
+            <div class="row1">
+                <div>
+                    <a href="https://v.daum.net/v/20241014070102977">
+                        <img src="https://img1.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202410/14/ked/20241014100902911csik.jpg" alt="1행 1열" />
+                    </a>
+                </div>
+                <div>
+                    <a href="https://v.daum.net/v/20241014050053347">
+                        <img src="https://img1.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202410/14/joongang/20241014075021306nrmd.jpg" alt="1행 2열" />
+                    </a>
+                </div>
+            </div>
+            <div class="row2">
+                <div>
+                    <a href="https://v.daum.net/v/20241014050053347">
+                        <img src="https://img1.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202410/14/joongang/20241014075021306nrmd.jpg" alt="2행 1열" />
+                    </a>
+                </div>
+                <div>
+                    <a href="https://v.daum.net/v/20241014070102977">
+                        <img src="https://img1.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202410/14/ked/20241014100902911csik.jpg" alt="2행 2열" />
+                    </a>
+                </div>
+            </div>
+            <div class="row3">
+                <div>
+                    <a href="https://v.daum.net/v/20241014070102977">
+                        <img src="https://img1.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202410/14/ked/20241014100902911csik.jpg" alt="3행 1열" />
+                    </a>
+                </div>
+                <div>
+                    <a href="https://v.daum.net/v/20241014050053347">
+                        <img src="https://img1.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202410/14/joongang/20241014075021306nrmd.jpg" alt="3행 2열" />
+                    </a>
+                </div>
+            </div>
+        </div><!--section1-->
+        <div id="section2">
+            <ul>
+                <li><a href="https://v.daum.net/v/20241014050053347">[단독] 국민연금 고갈 늦추는 '금손'…낮은 급여에 30명 탈출 '러시'</a></li>
+                <li><a href="https://v.daum.net/v/20241014070102977">베일 벗은 국산 차륜형자주포…"獨은 우크라 주는데 韓 2030년 생산?" [김동현의 K웨폰]</a></li>
+                <li><a href="https://v.daum.net/v/20241014050053347">[단독] 국민연금 고갈 늦추는 '금손'…낮은 급여에 30명 탈출 '러시'</a></li>
+                <li><a href="https://v.daum.net/v/20241014070102977">베일 벗은 국산 차륜형자주포…"獨은 우크라 주는데 韓 2030년 생산?" [김동현의 K웨폰]</a></li>
+            </ul>
+        </div>
+        <div id="section3">
+            <ul>
+                <li>
+                    <p class="img"><img src="ch07/100img.png"/></p>
+                    <p class="txt">
+                        <span>첫번째 스펜 내용은 말줄임을 할 예정입니다. block타입으로 전환할 예정입니다</span>
+                        <span>두번째 스펜 내용은 말줄임을 안 할 예정입니다. 한줄이상의 내용은 다음줄로</span>
+                    </p>
+                </li>
+                <li>
+                    <p class="img"><img src="ch07/100img.png"/></p>
+                    <p class="txt">
+                        <span>첫번째 스펜 내용은 말줄임을 할 예정입니다. block타입으로 전환할 예정입니다</span>
+                        <span>두번째 스펜 내용은 말줄임을 안 할 예정입니다. 한줄이상의 내용은 다음줄로</span>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <p><img src="ch07/logo.png" /></p>
+        <p>서울시 XX구 XX동 000 XX빌딩 803호</p>
+    </footer>
+</body>
+</html>

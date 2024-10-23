@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <script>
+        var id =setTimeout(() =>{
+                alert('3초지남')
+            }, 3000);
+        
+        var cnt = 0; // 횟수
+        var startTime = new Date().getTime(); // 현재 시점의 밀리세컨 1조몇
+        while(new Date().getTime() <= startTime + 2000){
+            cnt++;
+        }
+        clearTimeout(id);
+        document.write('2초동안  ' + cnt + '번 while문 수행함');
+    </script>
+</head>
+<body>
+    <h1>기다려봐</h1>
+</body>
+</html>
