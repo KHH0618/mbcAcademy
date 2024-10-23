@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="quiz.css" rel="stylesheet" type="text/css" />
+    <script>
+    function chk() {
+        if (!frm.pw.value) {
+            alert('비밀번호를 입력하세요');
+            frm.pw.focus();
+            return false;
+        } else if (frm.pw.value != frm.pwChk.value) {
+            alert('비밀번호를 확인하세요');
+            frm.pw.value = '';
+            frm.pwChk.value = '';
+            frm.pw.focus();
+            return false;
+        }
+        return true
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>회원가입</h1>
+    </header>
+    
+    <form action="" method="get" name="frm" onsubmit="return chk()">
+        <div>
+            <fieldset>
+                <legend>필수입력</legend>
+                <table>
+                    <tr>
+                        <td>
+                            <label for="name">이 름</label><b class="essential">*</b>
+                        </td>
+                        <td>
+                            <input type="text" name="name" id="name"
+                                   placeholder="이름은 2글자 이상"
+                                   required="required"
+                                   title="이름을 2글자 이상 입력하세요"
+                                   pattern="[a-zA-Z가-힣]([a-zA-Z가-힣])+" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="id">아이디</label><b class="essential">*</b>
+                        </td>
+                        <td>
+                            <input type="text" name="id" id="id"
+                                   placeholder="ID는 4글자 이상"
+                                   title="ID는 영어 대소문자 숫자 4자리이상만 가능합니다"
+                                   required="required"
+                                   pattern="\w{3}(\w)+" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="pw">비밀번호</label><b class="essential">*</b>
+                        </td>
+                        <td>
+                            <input type="password" name="pw" id="pw"
+                                   required="required" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="pwChk">비번확인</label><b class="essential">*</b>
+                        </td>
+                        <td>
+                            <input type="password" name="pwChk" id="pwChk"
+                                   required="required" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="tel">전화번호</label><b class="essential">*</b>
+                        </td>
+                        <td>
+                            <input type="text" name="tel" id="tel"
+                                   required="required"
+                                   placeholder="xx-xxx-xxxx/000-0000-0000"
+                                   title="전화번호 형식을 지켜주세요"
+                                   pattern="((\d{2,3})(\-|\ ))(\d{3,4}(\-|\ ))(\d){4}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="email">이메일</label><b class="essential">*</b>
+                        </td>
+                        <td>
+                            <input type="text" name="email" id="email"
+                                   required="required"
+                                   placeholder="abc@aaa.com"
+                                   title="이메일 형식을 지켜주세요"
+                                   pattern="((\w|[가-힣])+|(\w|[가-힣])+|(\w|[가-힣])+)@(\w+)\.(\w+)(\.\w+)?" />
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+        <div>
+            <fieldset>
+                <legend>추가 입력 사항</legend>
+                <table>
+                    <tr>
+                        <td>
+                            결혼<label for="married">유</label> <label for="single">무</label>
+                        </td>
+                        <td>
+                            <input type="radio" value="married" name="married" /> 기혼
+                            <input type="radio" value="single" name="married" /> 미혼
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            자녀
+                        </td>
+                        <td>
+                            <input type="checkbox" value="아들" name="son" /> 아들
+                            <input type="checkbox" value="딸" name="daughter" /> 딸
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            지역
+                        </td>
+                        <td>
+                            <select name="loc">
+                                <option>서울</option>
+                                <option>경기</option>
+                                <option>부산</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+        </fieldset>
+        </div>
+        <div class="but">
+            <input type="submit" value="가입" />
+            <input type="reset" value="초기화" />
+        </div>
+    </form>
+    <hr />
+    <footer>
+        서울시 관악구 신림동
+        <br />
+        mbc아카데미
+    </footer>
+
+</body>
+</html>
