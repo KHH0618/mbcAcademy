@@ -1,11 +1,17 @@
 package com.lec.dao;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import com.lec.dto.Dept;
 
-public class DeptRepositoryTest {
-
-	public static void main(String[] args) {
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+@WebServlet("/DeptRepositoryTest")
+public class DeptRepositoryTest extends HttpServlet{
+	
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws SecurityException, IOException{
 		DeptRepository deptRepository = DeptRepository.getInstance();
 		ArrayList<Dept> deptList = deptRepository.deptList();
 		if(deptList.isEmpty()) {
@@ -16,5 +22,4 @@ public class DeptRepositoryTest {
 			}
 		}
 	}
-
 }
