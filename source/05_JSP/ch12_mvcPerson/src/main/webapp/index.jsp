@@ -11,7 +11,7 @@
 <link href="${conPath }/css/ex.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<h1><a href="memberList.do">회원리스트</a></h1>
-	<h1><a href="memberJoin.do">회원가입</a></h1>
+	<%
+	response.sendRedirect("list.do"); %>
 </body>
 </html>

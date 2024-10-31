@@ -11,12 +11,14 @@
 <link href="${conPath }/css/ex.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<c:if test="${joinResult eq 1 }">
-		<script>alert('회원가입이 완료되었습니다');</script>
+	<c:set var="SUCCESS" value="1"/>
+	<c:set var="FAIL" value="0"/>
+	<c:if test="${joinResult eq SUCCESS }">
+		<script>alert('${memberJoinResult }');</script>
 	</c:if>
-	<c:if test="${joinResult eq 0 }">
+	<c:if test="${joinResult eq FAIL }">
 		<script>
-			alert('회원가입이 실패되었습니다');
+			alert('${memberJoinResult }');
 			history.back();
 		</script>
 	</c:if>
@@ -46,7 +48,7 @@
 		</c:forEach>
 	</table>
 	<p>
-		<button onclick="location.href='${conPath}/memberJoinView.do'">회원가입</button>
+		<button onclick="location.href='${conPath}/memberJoin.do'">회원가입</button>
 		<button onclick="location.href='${conPath}/'">처음으로</button>
 	</p>
 </body>

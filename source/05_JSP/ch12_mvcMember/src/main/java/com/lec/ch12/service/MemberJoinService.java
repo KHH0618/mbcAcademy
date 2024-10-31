@@ -16,18 +16,25 @@ public class MemberJoinService implements Service {
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
 		String birthStr = request.getParameter("birth");
+		String memberJoinResult = "";
 		int joinResult = 0;
 		Date birth = null;
 		if(!birthStr.equals("")) {
-			birth = Date.valueOf(birthStr);			
+			birth = Date.valueOf(birthStr);
 		}
 		MemberRepository memberRepository = MemberRepository.getInstace();
 		if(memberRepository.getCountMember(id) == MemberRepository.MEMBER_NONEXISTENT) {
 			joinResult = memberRepository.insertMember(new Member(id, pw, name, birth, null));
-			request.setAttribute("joinResult", joinResult);
-		}else {
-			
+			if(joinResult == MemberRepository.SUCCESS) {
+				memberJoinResult = "회원가입 성공했습니다";				
+			}else {
+				memberJoinResult = "회원가입 실패했습니다";							
+			}
+		}else if (memberRepository.getCountMember(id) == MemberRepository.MEMBER_EXISTENT){
+			memberJoinResult = "중복된 ID는 사용할 수 없습니다";
 		}
+		request.setAttribute("joinResult", joinResult);
+		request.setAttribute("memberJoinResult", memberJoinResult);			
 	}
 
 }
