@@ -24,4 +24,13 @@ public class Person {
 		this.birth = birth;
 		this.memo = memo;
 	}
+	public Person(int id, String name, String tel, String address, Date birth, String memo) {
+		this.id = id;
+		this.name = name;
+		this.tel = tel;
+		this.address = address;
+		this.birth = birth;
+		this.memo = memo;
+	}
+	
 }

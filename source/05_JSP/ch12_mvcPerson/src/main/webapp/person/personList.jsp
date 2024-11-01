@@ -13,17 +13,15 @@
 <body>
 	<c:set var="SUCCESS" value="1"/>
 	<c:set var="FAIL" value="0"/>
-	<c:if test="${not empty insertResult }">
-		<c:if test="${insertResult eq SUCCESS}">
-			<script>
-				alert('지인추가 완료했습니다');
-			</script>
-		</c:if>
-		<c:if test="${insertResult eq FAIL}">
-			<script>
-				alert('지인추가 실패했습니다');
-			</script>
-		</c:if>
+	<c:if test="${insertResult eq SUCCESS}">
+		<script>
+			alert('지인추가 완료했습니다');
+		</script>
+	</c:if>
+	<c:if test="${insertResult eq FAIL}">
+		<script>
+			alert('지인추가 실패했습니다');
+		</script>
 	</c:if>
 	<c:if test="${not empty deleteResult }">
 		<c:if test="${deleteResult eq SUCCESS}">
@@ -37,6 +35,7 @@
 			</script>
 		</c:if>
 	</c:if>
+	
 	<table>
 		<tr>
 			<td colspan="4">

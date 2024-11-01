@@ -202,18 +202,17 @@ public class PersonRepository {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "UPDATE PERSON"
-				+ "    SET ID = ?, NAME=?,TEL = ?, ADDRESS=?, BIRTH=?, MEMO=?"
+				+ "    SET NAME=?,TEL = ?, ADDRESS=?, BIRTH=?, MEMO=?"
 				+ "    WHERE ID = ?";
 		try {
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, person.getId());
-			pstmt.setInt(7, person.getId());
-			pstmt.setString(2, person.getName());
-			pstmt.setString(3, person.getTel());
-			pstmt.setString(4, person.getAddress());
-			pstmt.setDate(5, person.getBirth());
-			pstmt.setString(6, person.getMemo());
+			pstmt.setString(1, person.getName());
+			pstmt.setString(2, person.getTel());
+			pstmt.setString(3, person.getAddress());
+			pstmt.setDate(4, person.getBirth());
+			pstmt.setString(5, person.getMemo());
+			pstmt.setInt(6, person.getId());
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());

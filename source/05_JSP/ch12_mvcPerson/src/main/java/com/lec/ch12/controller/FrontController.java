@@ -6,6 +6,7 @@ import com.lec.service.InsertPerson;
 import com.lec.service.PersonDelete;
 import com.lec.service.PersonInfo;
 import com.lec.service.PersonList;
+import com.lec.service.PersonUpdate;
 import com.lec.service.Service;
 
 import jakarta.servlet.RequestDispatcher;
@@ -33,11 +34,17 @@ public class FrontController extends HttpServlet {
 			service.extend(request, response);
 			viewPage = "person/personInfo.jsp";
 		}else if(command.equals("/update.do")) {
+			service = new PersonInfo();
+			service.extend(request, response);
 			viewPage = "person/personUpdate.jsp";
 		}else if(command.equals("/delete.do")) {
 			service = new PersonDelete();
 			service.extend(request, response);
 			viewPage = "list.do";
+		}else if(command.equals("/update2.do")) {
+			service = new PersonInfo();
+			service.extend(request, response);
+			viewPage = "person/personUpdate2.jsp";
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);
@@ -57,7 +64,13 @@ public class FrontController extends HttpServlet {
 			service.extend(request, response);
 			viewPage = "list.do";
 		}else if(command.equals("/update.do")) {
-			
+			service = new PersonUpdate();
+			service.extend(request, response);
+			viewPage = "info.do";
+		}else if(command.equals("/info.do")) {
+			service = new PersonInfo();
+			service.extend(request, response);
+			viewPage = "person/personInfo.jsp";
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);
