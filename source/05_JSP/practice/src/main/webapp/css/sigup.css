@@ -1,0 +1,17 @@
+body{
+    width: 80%;
+    margin: 10px auto;
+}
+table{
+    width: 25%;
+    margin: 0 auto;
+    width: 200px;
+}
+tr{
+    overflow: hidden;
+}
+td{
+    float: left;
+    height: 17%;
+    margin: 10px auto;
+}
