@@ -1,0 +1,21 @@
+1. 폼 태그:
+   - `<form>`: 사용자 입력을 서버로 전송하는 양식. `action`으로 전송 위치 지정, `method`로 전송 방식 설정 (`get`, `post`).
+   - 주요 입력 유형: `text`, `password`, `radio`, `checkbox`, `submit`, `file`, `button` 등.
+
+2. 입력 필드 속성:
+   - `required`: 필수 입력 필드.
+   - `autofocus`: 자동 포커스.
+   - `placeholder`: 입력 힌트 표시.
+   - `min`, `max`: 값의 범위 설정.
+   - `pattern`: 유효성 검사용 정규식 패턴.
+
+3. 레이아웃 태그:
+   - `<div>`: 블록 형식으로 구역 분할.
+   - `<span>`: 인라인 형식으로 텍스트 내 구분.
+
+4. 시멘틱 태그:
+   - HTML5에서 페이지 구조를 명확히 하기 위한 태그들.
+   - `<header>`, `<nav>`, `<aside>`, `<section>`, `<article>`, `<footer>` 등의 시멘틱 태그는 검색 엔진 최적화와 유지보수에 유리.
+
+5. 시멘틱 태그 활용 예시:
+   - `<header>`에 사이트 제목, `<nav>`에 메뉴, `<section>`과 `<article>`에 주요 콘텐츠, `<footer>`에 회사 정보 등.

@@ -1,0 +1,11 @@
+1. Servlet 개요:  
+   - Servlet은 자바 파일로 작성되는 동적 웹 애플리케이션의 구성 요소로, 클라이언트 요청에 따라 동적으로 작동하며 응답은 HTML로 이루어진다. 자바 스레드를 사용하여 다수의 요청을 효율적으로 처리할 수 있다.
+
+2. Servlet 파일 생성:  
+   - 일반 클래스와 달리 HttpServlet 클래스를 상속해야 하며, WebServlet 어노테이션을 사용해 서블릿에 접근할 URL 패턴을 지정한다. 예를 들어, WebServlet("/HelloWorld")로 설정하여 특정 URL을 통해 서블릿에 접근할 수 있다.
+
+3. doGet과 doPost 메소드:  
+   - 클라이언트 요청을 처리하는 핵심 메소드로, doGet은 GET 요청을, doPost는 POST 요청을 처리한다. 응답을 HTML로 출력할 때는 response.setContentType("text/html;charset=UTF-8")으로 설정하여 UTF-8로 인코딩된 HTML 응답을 반환한다.
+
+4. 웹 맵핑:  
+   - 웹 브라우저에서 서블릿에 접근할 수 있도록 WebServlet을 사용한 어노테이션 방식이나 web.xml 파일에서 서블릿 이름과 URL 패턴을 설정하여 매핑한다.

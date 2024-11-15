@@ -1,0 +1,10 @@
+1. window 객체:
+   - 브라우저 최상위 객체로, alert, prompt와 같은 기본 함수는 모두 window 객체의 메서드
+   - open 메서드로 새 창을 열고, 이름과 크기, 위치를 지정 가능
+
+2. location 객체:
+   - 브라우저 주소 표시줄과 관련된 객체로, 페이지 이동에 사용
+   - assign, replace, href를 통해 페이지 이동 가능하며, replace는 뒤로 가기 불가능
+
+3. history 객체:
+   - 사용자의 방문 기록을 관리하는 객체로, go, back, forward 메서드를 통해 탐색 가능

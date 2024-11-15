@@ -1,0 +1,28 @@
+1. 자료형:
+   - 기본 자료형: string, number, boolean, object (array 포함), function, undefined.
+   - 변수 선언: var (전역), let (블록 범위), const (상수, 내부 값은 변경 가능).
+
+2. 출력 및 주석:
+   - 출력: alert, document.write.
+   - 주석: /* 주석 */ 또는 // 주석.
+
+3. 변수와 스코프:
+   - var, let, const의 사용 차이점과 스코프 이해가 중요.
+
+4. 자료형 검사 및 변환:
+   - typeof로 자료형 확인.
+   - Number, parseInt, parseFloat로 숫자로 변환 가능.
+   - Boolean 변환은 특정 값이 false로 평가됨 (0, NaN, '', null, undefined, false).
+
+5. 연산자:
+   - 복합 대입 연산자(+=, -= 등)와 논리 연산자(==, ===) 등 다양한 연산자를 지원.
+   - 일치 연산자 (==와 ===)는 값과 자료형의 일치 여부를 확인.
+
+6. 입출력 함수:
+   - alert: 경고 메시지.
+   - confirm: 사용자의 확인 요청.
+   - prompt: 사용자 입력을 받을 수 있는 대화 상자.
+
+7. 자료형 변환:
+   - 문자열 + 숫자 = 문자열 우선.
+   - Number, String, Boolean 등을 통해 형 변환 가능.

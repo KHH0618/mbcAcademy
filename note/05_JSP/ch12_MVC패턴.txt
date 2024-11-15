@@ -1,0 +1,8 @@
+1. MVC 패턴 개요:  
+   - MVC 패턴은 Model, View, Controller로 구성되며, 개발의 효율성과 유지보수를 위해 사용하는 아키텍처이다. Model은 데이터베이스와 연동하고, View는 사용자에게 보여지는 화면이며, Controller는 클라이언트 요청을 처리하고 데이터를 View로 전달한다.
+
+2. Model1과 Model2:  
+   - Model1은 JSP가 View와 Controller 역할을 함께 수행하여 단순하지만 확장성이 낮다. Model2는 Controller, Model, View를 분리하여 모듈화한 구조로, 유지보수와 확장에 유리하다. 작업이 커질수록 Model2가 효율적이다.
+
+3. Controller 및 JSP 파일:  
+   - Controller는 URL 패턴에 따라 Service 클래스를 호출하고, Service 클래스는 필요한 작업을 수행한 후 결과를 request 객체에 저장한다. JSP 파일에서는 이 데이터를 EL과 JSTL 태그로 출력하여 UI를 구성한다.

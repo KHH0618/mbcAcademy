@@ -1,0 +1,19 @@
+1. DOM 개요:
+   - HTML 페이지의 구조를 객체 모델로 나타내어 JavaScript에서 제어할 수 있도록 함
+   - 정적 DOM은 HTML에 정의된 객체를, 동적 DOM은 JavaScript로 생성한 객체를 의미
+
+2. 문서 객체 생성:
+   - createElement와 createTextNode를 통해 새로운 요소와 텍스트를 생성하고 appendChild로 추가
+   - 속성은 setAttribute를 통해 설정 가능
+
+3. 문서 객체 접근:
+   - getElementById, getElementsByClassName, getElementsByTagName, querySelector, querySelectorAll을 통해 원하는 요소에 접근 가능
+
+4. 스타일 조작:
+   - style 속성을 통해 개별 요소의 CSS 속성을 JavaScript로 조작 가능
+
+5. 문서 객체 제거 및 추가:
+   - removeChild로 특정 요소를 삭제하고 innerHTML 또는 appendChild로 새로운 요소 추가 가능
+
+6. 부모-자식 창 간 데이터 전달:
+   - parent 창에서 열린 child 창과 데이터를 주고받기 위해 opener 객체 사용

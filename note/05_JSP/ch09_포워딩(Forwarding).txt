@@ -1,0 +1,8 @@
+1. 포워딩(Forwarding) 개요:  
+   - 포워딩은 클라이언트 요청을 다른 컴포넌트에 전달하는 방식으로, HttpServletResponse와 RequestDispatcher 클래스를 사용하여 구현한다. 두 클래스의 차이점은 HttpServletResponse는 새 요청 객체를 생성하고, RequestDispatcher는 기존 요청 객체를 전달한다.
+
+2. HttpServletResponse 클래스:  
+   - sendRedirect 메서드를 사용하여 요청을 새로운 URL로 리다이렉트하고, 새로운 요청 객체를 생성하여 파라미터를 다시 전달한다. 이 경우 요청과 응답이 새로 생성되므로 이전의 request 객체는 전달되지 않는다.
+
+3. RequestDispatcher 클래스:  
+   - forward 메서드를 사용하여 기존 요청 객체를 다른 컴포넌트에 전달한다. 이를 통해 기존의 request와 response 객체를 유지하면서 요청을 위임할 수 있으며, request 객체에 데이터를 설정하여 View 단으로 넘길 수 있다.

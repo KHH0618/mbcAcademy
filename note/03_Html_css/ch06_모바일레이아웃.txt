@@ -1,0 +1,8 @@
+Viewport
+Viewport는 웹 브라우저의 HTML 문서에 특정 정보를 표시하기 위해 사용되는 meta 태그이다. 모바일 디바이스에서 화면 크기에 상관없이 웹 페이지가 전체 화면을 채우도록 설정할 수 있으며, 모바일 브라우저의 화면 설정을 제어한다.
+
+Viewport 주요 속성 :
+- width, height: 화면 너비와 높이 설정
+- initial-scale: 초기 화면 비율 설정
+- user-scalable: 확대/축소 가능 여부
+- minimum-scale, maximum-scale: 최소/최대 확대 비율 설정
