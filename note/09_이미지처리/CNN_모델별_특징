@@ -1,0 +1,34 @@
+1. LeNet  
+   - 개발 연도: 1998년  
+   - 주요 특징: CNN의 첫 번째 모델로 Yann Lecun 연구팀에 의해 개발됨.  
+   - 구조: Convolution과 Subsampling을 반복하고 Fully-Connected Layer에서 분류 수행.  
+   - 핵심 기술: Average Pooling 사용.  
+
+2. AlexNet  
+   - 개발 연도: 2012년  
+   - 주요 특징: ImageNet 대회(ILSVRC)에서 우승하며 CNN의 대중화를 이끌음.  
+   - 구조: 5개의 Convolution Layer와 3개의 Fully-Connected Layer로 구성.  
+   - 기술적 특징: ReLU 활성화 함수, Dropout, Overlapped Pooling, LRN(Local Response Normalization) 사용.  
+
+3. VGGNet  
+   - 개발 연도: 2014년  
+   - 주요 특징: 네트워크 깊이를 늘려 성능 향상을 도모함.  
+   - 구조: VGG16, VGG19와 같이 16~19층의 네트워크 깊이를 가짐.  
+   - 기술적 특징: 3x3 Convolution Kernel 사용으로 연산량 효율화.  
+
+4. GoogLeNet  
+   - 개발 연도: 2014년  
+   - 주요 특징: Inception 모듈 도입으로 다양한 크기의 필터를 사용하여 특성 추출.  
+   - 구조: 22개의 층으로 구성되며, Global Average Pooling과 Auxiliary Classifier 사용.  
+   - 기술적 특징: 1x1 Convolution으로 연산량 감소.  
+
+5. ResNet  
+   - 개발 연도: 2015년  
+   - 주요 특징: 잔차 학습(Residual Learning)으로 매우 깊은 네트워크 학습 가능.  
+   - 구조: 50~152개의 깊은 층 구성.  
+   - 기술적 특징: Skip Connection을 통해 기울기 소실 문제 해결.  
+
+6. SENet  
+   - 개발 연도: 2017년  
+   - 주요 특징: 채널 간 관계를 학습하여 성능을 향상.  
+   - 기술적 특징: Squeeze-and-Excitation 모듈 도입.  
