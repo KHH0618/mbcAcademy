@@ -15,7 +15,7 @@ def info(filename):
   return ctime, mtime, atime, size
 
 # print(stamp2real(1736736142.0))
-filelist = os.listdir('templates/upload/')
+filelist = os.listdir('./upload/')
 # print(filelist)
 for filename in filelist:
   ctime, mtime, atime, size = info('./upload/'+filename)
@@ -27,3 +27,14 @@ for filename in filelist:
     print("{:.2f}KB".format(size/1024))
   else:
     print("{:.2f}MB".format(size/ (1024*1024) ))
+
+
+
+
+
+
+
+
+
+
+
