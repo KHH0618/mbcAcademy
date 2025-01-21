@@ -17,9 +17,6 @@ app = FastAPI()
 app.mount('/static', StaticFiles(directory=os.path.join(BASE_DIR, '../static')), name='static')
 templates = Jinja2Templates(directory=os.path.join(BASE_DIR, '../templates'))
 
-@app.get('/')
-async def health_check_handler():
-    return  {'status':'ok'}
 todo_data = {
     1:{
         'id':1,
@@ -43,10 +40,41 @@ todo_data = {
     }
 }
 
+@app.get('/')
+# async def health_check_handler():
+#     return  {'status':'ok'}
+
 # /todos(할일 1부터 출력) 또는 /todos?order=desc(할일 역순으로 출력)
 @app.get('/todos')
-async def get_todos_handler(order:str|None=None):
+@app.post('/todos')
+async def get_todos_handler(request:Request, order:str|None=None):
     todos = list(todo_data.values())
     if order and order.lower() == 'desc':
         todos = todos[::-1]
-    return todos
+    next_id = max(todo_data.keys())+1
+    return templates.TemplateResponse('todos.html', # todo 목록, todo 입력 form
+                                      {'request':request,
+                                       'todos':todos,
+                                       'next_id':next_id,
+                                       'order':order.lower() if order else ''}
+                                      )
+
+@app.get('/todos/{todo_id}')
+async def  get_todo_detail_handler(request:Request, todo_id:int):
+    todo = todo_data.get(todo_id, {})
+    return templates.TemplateResponse('todo.html', {'request':request, 'todo':todo})
+
+@app.post('/create')
+async def create_todo_handler(todo:ToDoRequest=Form()):
+    # print('form태그로 부터 입력된 todo', todo)
+    todo_data[todo.id] = todo.dict()
+    return RedirectResponse('/todos')
+
+@app.delete('/delete/{todo_id}')
+async def delete_todo_handler(todo_id:int):
+    # key가 없는 todo_id를 이력할 경우 None
+    todo = todo_data.pop(todo_id,None)
+    if todo:
+        return f'{todo_id}번 todo 삭제 성공'
+    else:
+        return f'{todo_id}는 등록되지 않는 todo여서 삭제 실패'
