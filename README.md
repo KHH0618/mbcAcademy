@@ -1,8 +1,10 @@
-# LINK
-### 공부일지 <a href="https://github.com/yisy0703/ai"><img src="https://img.shields.io/badge/공부일지-0000FF?style=for-the-badge&logo=github&logoColor=white"/></a>
-### 1st PERSONAL PROJECT <a href="https://github.com/yisy0703/1stPersonalProject"><img src="https://img.shields.io/badge/PROJ[우리영화언제쯤]-FF0000?style=for-the-badge&logo=github&logoColor=white"/></a>
-### 2ed TEAM PROJECT <a href="https://github.com/yisy0703/1stPersonalProject"><img src="https://img.shields.io/badge/TEAMPRO[미정]-33FF33?style=for-the-badge&logo=github&logoColor=black"/></a>
+# (산대특) 스마트 팩토리 혁신을 위한 AI 솔루션 개발 양성과정을 위한 공유 자료실
 
+방문해 주셔서 감사합니다.
+
+
+# 교육이수 기술 내역서
+![기술내역서](https://github.com/user-attachments/assets/556b1a64-a906-45f7-ad7c-30475eaadf47)
 
  # 📚 SKIL
  ### Programming
@@ -11,7 +13,6 @@
   <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white"> 
   <img src="https://img.shields.io/badge/tensorflow-55ff55?style=for-the-badge&logo=fastapi&logoColor=white">
   <img src="https://img.shields.io/badge/sklearn-55ff55?style=for-the-badge&logo=fastapi&logoColor=white">
-  <img src="https://img.shields.io/badge/fastapi-FF0000?style=for-the-badge&logo=fastapi&logoColor=white">
 </div>
 
  ### DBMS 
@@ -48,4 +49,4 @@
   <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white">
  </div>
 
-
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=KHH0618&show_icons=true&theme=radical)
