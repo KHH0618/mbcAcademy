@@ -26,3 +26,12 @@ urlpatterns = [
     path("showId/<str:id>/", views.showStrId, name="showStrId"),
     path("wordcnt/", include("wordcnt.urls")),
 ]
+
+
+
+
+
+
+
+
+
