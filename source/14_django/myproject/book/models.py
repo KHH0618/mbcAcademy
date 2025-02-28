@@ -1,9 +1,10 @@
 from django.db import models
 from django import forms
-from django.urls import reverse
 from django.core.validators import MinLengthValidator
 from django.core.validators import MinValueValidator
 from django.core.validators import MaxValueValidator
+from django.urls import reverse
+
 
 def min_length_3_validator(value):
   if len(value)<3:
@@ -25,14 +26,23 @@ class Book(models.Model):
                                               MaxValueValidator(1000000)])
   ip        = models.GenericIPAddressField(blank=True, null=True)
 
-  def get_absolute_url(self):
-      return reverse('book:list')
-
   def __str__(self):
     return "{}:{}著 {:,}원 from{}".format(self.title,
                                          self.author,
                                          self.sales,
                                          self.ip)
+  def get_absolute_url(self):
+    return reverse('article:list')
+    # return reverse('article:edit', args=[self.id])
+
   class Meta:
     ordering = ['-publication_date']
     unique_together = (('title','author'), )
+
+
+
+
+
+
+
+

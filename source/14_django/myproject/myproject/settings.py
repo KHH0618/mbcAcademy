@@ -41,8 +41,9 @@ INSTALLED_APPS = [
     "django_extensions", # 추가 앱 등록(shell_plus 사용하기 위함 model들 자동 import)
     "blog", # 앱등록
     "accounts",
-    "book",
     "django.contrib.humanize", # intcomma(세자리마다 ,) 필터 사용
+    "article",
+    "filetest",
 ]
 
 MIDDLEWARE = [
@@ -61,7 +62,7 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            os.path.join(BASE_DIR, 'myproject', 'templates'),
+           os.path.join(BASE_DIR, 'myproject', 'templates'),
         ],
         "APP_DIRS": True,
         "OPTIONS": {
@@ -123,6 +124,15 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "static/"
+STATICFILES_DIRS = [
+	os.path.join(BASE_DIR, 'myproject', 'static'),
+]
+STATIC_ROOT = os.path.join(BASE_DIR, '..', '_staticfiles') #운영시 static 경로
+
+MEDIA_URL = '/media/' # media파일의 url
+MEDIA_ROOT = os.path.join(BASE_DIR, '_media') # 업로드한 파일이 저장될 폴더
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
