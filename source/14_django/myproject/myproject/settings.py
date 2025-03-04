@@ -28,7 +28,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -44,6 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.humanize", # intcomma(세자리마다 ,) 필터 사용
     "article",
     "filetest",
+    "book",
 ]
 
 MIDDLEWARE = [
@@ -78,7 +78,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "myproject.wsgi.application"
 
-
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
@@ -89,23 +88,23 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
-    },
+    # {
+    #     "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+    # }, # user 속성과 유사한 경우 X
+    # {
+    #     "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+    #     "OPTIONS":{"min_length":2}
+    # }, # 최소 2자리 이상
+    # {
+    #     "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+    # }, # 흔한 비밀번호 X
+    # {
+    #     "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+    # }, # 숫자만인 비밀번호 X
 ]
 
 
@@ -132,9 +131,19 @@ STATIC_ROOT = os.path.join(BASE_DIR, '..', '_staticfiles') #운영시 static 경
 MEDIA_URL = '/media/' # media파일의 url
 MEDIA_ROOT = os.path.join(BASE_DIR, '_media') # 업로드한 파일이 저장될 폴더
 
-
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# 메일->환경설정->POP3/IMAP설정-> IMAP/SMTP설정->사용함->저장
+EMAIL_HOST = 'smtp.naver.com'
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

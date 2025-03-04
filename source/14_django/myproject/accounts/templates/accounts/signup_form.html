@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 
-{% block title %}기사 등록{% endblock %}
+{% block title %}회원가입{% endblock %}
 
 {% block content %}
-  <form action="" method="post" enctype="multipart/form-data">
+  <form action="" method="post">
    {% csrf_token %}
    <table class="table">
-     {{form.as_table}}
-     <tr>
+    {{ form.as_table }}
+    <tr>
       <td colspan="2" class="text-center">
-       <input type="submit" value="등록">
-       <input type="button" value="목록"
+       <input type="submit" value="회원가입">
+       <input type="button" value="취소"
        onclick="location='{% url 'article:list'%}'">
       </td>
      </tr>

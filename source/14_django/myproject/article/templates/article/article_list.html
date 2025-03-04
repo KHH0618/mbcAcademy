@@ -14,5 +14,5 @@
   {% empty %}
      <p>기사 목록이 없습니다</p>
   {% endfor %}
-  <a href="/article/new">[article 추가]</a>
+  <a href="{% url 'article:new' %}">[article 추가]</a>
 {% endblock  %}
